@@ -55,10 +55,14 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
+
 # 부산대학교 헤더
 logo_path = Path("assets/pusan_logo.png")
 
-col1, col2 = st.columns([0.12, 0.88])
+col1, col2, col3, col4 = st.columns(
+    [0.12, 0.36, 0.26, 0.26],
+    vertical_alignment="center"
+)
 
 with col1:
     if logo_path.exists():
@@ -73,6 +77,49 @@ with col2:
         unsafe_allow_html=True
     )
 
+with col3:
+    st.markdown(
+        """
+        <div style="
+            border-left: 1px solid #DCE3EC;
+            padding-left: 20px;
+        ">
+            <div style="
+                font-size: 17px;
+                font-weight: 700;
+                color: #142B49;
+            ">까웅뻬이손윈</div>
+            <div style="
+                font-size: 13px;
+                color: #7A8795;
+                margin-top: 5px;
+            ">행정학과</div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+with col4:
+    st.markdown(
+        """
+        <div style="
+            border-left: 1px solid #DCE3EC;
+            padding-left: 20px;
+        ">
+            <div style="
+                font-size: 17px;
+                font-weight: 700;
+                color: #142B49;
+            ">까웅셋리인</div>
+            <div style="
+                font-size: 13px;
+                color: #7A8795;
+                margin-top: 5px;
+            ">멀티미디어학과</div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
 # 대시보드 제목
 st.markdown(
