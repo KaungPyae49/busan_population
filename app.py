@@ -1283,142 +1283,67 @@ elif menu == "주거환경 분석":
 # =========
 
 # ==================================================
-# 7. 데이터 출처 및 분석 방법
-# ==================================================
-
 elif menu == "데이터 출처 및 분석 방법 정리":
 
-    # 페이지 제목
-    st.markdown("""
-    <div style="text-align:center; padding:30px 0;">
-        <div style="
-            color:#64748B;
-            font-size:13px;
-            font-weight:700;
-            letter-spacing:2px;
-        ">
-            DATA SOURCE & METHODOLOGY
-        </div>
+    st.title("DATA SOURCE & METHODOLOGY")
+    st.subheader("데이터 출처 및 분석 방법")
+    st.caption(
+        "객관적인 국가통계를 바탕으로 부산의 인구 유출 현상을 분석했습니다."
+    )
 
-        <h2 style="
-            color:#142B49;
-            font-size:28px;
-            font-weight:800;
-            margin-top:12px;
-        ">
-            데이터 출처 및 분석 방법
-        </h2>
+    st.divider()
 
-        <p style="
-            color:#64748B;
-            font-size:15px;
-            margin-top:10px;
-        ">
-            객관적인 국가통계를 바탕으로 부산의 인구 유출 현상을 분석했습니다.
-        </p>
-    </div>
-    """, unsafe_allow_html=True)
+    # 01. 데이터 출처
+    st.header("01. 데이터 출처")
 
-    st.markdown("---")
+    st.info("OFFICIAL STATISTICS")
 
-    # 1. 데이터 출처
-    st.markdown("### 01. 데이터 출처")
+    st.subheader("KOSIS 국가통계포털")
 
-    st.markdown("""
-    <div style="
-        background:#F4F7FB;
-        border:1px solid #E2E8F0;
-        border-radius:14px;
-        padding:25px;
-    ">
-        <div style="
-            color:#64748B;
-            font-size:12px;
-            font-weight:700;
-            letter-spacing:1px;
-        ">
-            OFFICIAL STATISTICS
-        </div>
+    st.write("""
+    본 대시보드에 활용된 통계자료는 KOSIS 국가통계포털에서 수집하였습니다.
+    인구 이동, 전출 사유, 고용, 산업 및 주거환경 관련 통계자료를
+    활용하여 부산의 인구 유출 현상을 분석했습니다.
+    """)
 
-        <h3 style="
-            color:#142B49;
-            margin:12px 0;
-            font-size:22px;
-        ">
-            KOSIS 국가통계포털
-        </h3>
+    st.link_button(
+        "KOSIS 국가통계포털 바로가기",
+        "https://kosis.kr/"
+    )
 
-        <p style="
-            color:#475569;
-            font-size:14px;
-            line-height:1.9;
-        ">
-            본 대시보드에 활용된 통계자료는
-            KOSIS 국가통계포털에서 수집하였습니다.
-            인구 이동, 전출 사유, 고용, 산업 및 주거환경 관련
-            통계자료를 활용하여 부산의 인구 유출 현상을 분석했습니다.
-        </p>
+    st.divider()
 
-        <a href="https://kosis.kr/" target="_blank"
-           style="
-               color:#2563EB;
-               font-weight:700;
-               text-decoration:none;
-               font-size:14px;
-           ">
-            KOSIS 국가통계포털 바로가기 →
-        </a>
-    </div>
-    """, unsafe_allow_html=True)
+    # 02. 주요 활용 데이터
+    st.header("02. 주요 활용 데이터")
 
-    st.markdown("")
+    col1, col2, col3, col4, col5 = st.columns(5)
 
-    # 2. 주요 활용 데이터
-    st.markdown("### 02. 주요 활용 데이터")
+    with col1:
+        st.subheader("인구 이동")
+        st.write("전입·전출 및 순이동 현황")
 
-    data_items = [
-        ("인구 이동", "전입·전출 및 순이동 현황"),
-        ("전출 사유", "직업·가족·주택·교육 등"),
-        ("일자리 및 산업", "고용 및 산업·사업체 통계"),
-        ("주거환경", "아파트 매매가격지수")
-    ]
+    with col2:
+        st.subheader("전출 사유")
+        st.write("직업·가족·주택·교육 등")
 
-    cols = st.columns(4)
+    with col3:
+        st.subheader("일자리 및 산업")
+        st.write("고용 및 산업·사업체 통계")
+        
+    with col4:
+        st.subheader("산업 및 사업체")
+        st.write("산업별 사업체 및 종사자 현황")
 
-    for col, (title, description) in zip(cols, data_items):
-        with col:
-            st.markdown(f"""
-            <div style="
-                background:#FFFFFF;
-                border:1px solid #E2E8F0;
-                border-radius:12px;
-                padding:20px 12px;
-                min-height:125px;
-                text-align:center;
-            ">
-                <div style="
-                    color:#142B49;
-                    font-size:16px;
-                    font-weight:700;
-                    margin-bottom:10px;
-                ">
-                    {title}
-                </div>
+    with col5:
+        st.subheader("주거환경")
+        st.write("아파트 매매가격지수")
+    
+    st.divider()
 
-                <div style="
-                    color:#64748B;
-                    font-size:12px;
-                    line-height:1.7;
-                ">
-                    {description}
-                </div>
-            </div>
-            """, unsafe_allow_html=True)
+    # 03. 데이터 분석 과정
+    st.header("03. 데이터 분석 과정")
 
-    st.markdown("")
-
-    # 3. 데이터 분석 과정
-    st.markdown("### 03. 데이터 분석 과정")
+    process_cols = st.columns(4)
 
     process_items = [
         ("01", "데이터 수집", "KOSIS"),
@@ -1427,90 +1352,21 @@ elif menu == "데이터 출처 및 분석 방법 정리":
         ("04", "대시보드 구현", "Streamlit")
     ]
 
-    process_cols = st.columns(4)
-
     for col, (number, title, tool) in zip(process_cols, process_items):
         with col:
-            st.markdown(f"""
-            <div style="
-                background:#F8FAFC;
-                border:1px solid #E2E8F0;
-                border-top:3px solid #315B8A;
-                border-radius:10px;
-                padding:20px 14px;
-                min-height:125px;
-            ">
-                <div style="
-                    color:#315B8A;
-                    font-size:12px;
-                    font-weight:800;
-                ">
-                    {number}
-                </div>
+            with st.container(border=True):
+                st.caption(number)
+                st.subheader(title)
+                st.write(tool)
 
-                <div style="
-                    color:#142B49;
-                    font-size:15px;
-                    font-weight:700;
-                    margin-top:10px;
-                ">
-                    {title}
-                </div>
 
-                <div style="
-                    color:#64748B;
-                    font-size:13px;
-                    margin-top:8px;
-                ">
-                    {tool}
-                </div>
-            </div>
-            """, unsafe_allow_html=True)
-
-    st.markdown("")
-
-    # 4. 분석 시 유의사항
-    st.markdown("### 04. 분석 시 유의사항")
-
-    st.info(
-        "통계자료는 수집 시점과 제공 기관의 공표 일정에 따라 "
-        "기준 기간이 다를 수 있습니다. "
-        "특히 2026년 자료는 실제 제공된 기간을 기준으로 해석해야 합니다."
-    )
-
-    # 5. 마무리 메시지
-    st.markdown("""
-    <div style="
-        text-align:center;
-        padding:55px 15px 35px 15px;
-    ">
-        <div style="
-            color:#64748B;
-            font-size:12px;
-            font-weight:700;
-            letter-spacing:2px;
-            margin-bottom:18px;
-        ">
-            DATA-DRIVEN INSIGHT · BUSAN
+    # 마무리
+    st.markdown(
+        """
+        <div style="text-align:center; padding:35px 10px;">
+            <h2>사람이 떠나는 도시에서,<br>사람이 머무는 도시로.</h2>
+            <p>부산의 미래는 인구 변화의 원인을 이해하는 것에서 시작됩니다.</p>
         </div>
-
-        <h2 style="
-            color:#142B49;
-            font-size:27px;
-            font-weight:800;
-            line-height:1.6;
-        ">
-            사람이 떠나는 도시에서,<br>
-            사람이 머무는 도시로.
-        </h2>
-
-        <p style="
-            color:#64748B;
-            font-size:14px;
-            margin-top:15px;
-            line-height:1.8;
-        ">
-            부산의 미래는 인구 변화의 원인을 이해하는 것에서 시작됩니다.
-        </p>
-    </div>
-    """, unsafe_allow_html=True)
+        """,
+        unsafe_allow_html=True
+    )
