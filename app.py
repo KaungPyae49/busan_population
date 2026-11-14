@@ -95,6 +95,12 @@ with col3:
                 margin-top: 5px;
             ">행정학과</div>
         </div>
+         <div style="
+                font-size: 12px;
+                color: #9AA5B1;
+                margin-top: 4px;
+            ">학번: 202305224</div>
+        </div>
         """,
         unsafe_allow_html=True
     )
@@ -110,12 +116,18 @@ with col4:
                 font-size: 17px;
                 font-weight: 700;
                 color: #142B49;
-            ">까웅셋리인</div>
+            ">까웅 셋 린</div>
             <div style="
                 font-size: 13px;
                 color: #7A8795;
                 margin-top: 5px;
-            ">멀티미디어학과</div>
+            ">미디어커뮤니케이션학과</div>
+        </div>
+        <div style="
+                font-size: 12px;
+                color: #9AA5B1;
+                margin-top: 4px;
+            ">학번: 202406268</div>
         </div>
         """,
         unsafe_allow_html=True
@@ -586,7 +598,7 @@ elif menu == "인구 이동 현황":
             f"{int(top_destination['이동자수']):,}명"
         )
     st.info("""
-    💡 핵심 인사이트
+    💡 핵심 내용
 
     부산에서 다른 지역으로 이동한 인구를 분석하면
     주요 전출 지역과 지역 간 인구 이동 흐름을 확인할 수 있습니다.
@@ -742,7 +754,7 @@ elif menu == "전출 사유 분석":
         hide_index=True
     )
     st.info("""
-    💡 핵심 인사이트
+    💡 핵심 내용
 
     2025년 부산의 전출 사유 중 직업이 45,162명으로 가장 많았으며,
     가족(33,707명), 주택(16,319명)이 그 뒤를 이었습니다.
@@ -875,7 +887,7 @@ elif menu == "일자리 분석":
         width="stretch"
     )
     st.info("""
-    💡 핵심 인사이트
+    💡 핵심 내용
 
     일자리 관련 통계는 부산의 고용 환경과 지역 내 경제활동 여건을
     파악하는 데 중요한 자료입니다.
@@ -1124,7 +1136,7 @@ elif menu == "산업 및 사업체 분석":
         "이 그래프는 두 지표의 관계를 보여주며 인과관계를 의미하지 않습니다."
     )
     st.info("""
-    💡 핵심 인사이트
+    💡 핵심 내용
 
     산업별 사업체와 종사자 현황을 통해 부산의 산업 구조와
     지역 경제의 고용 기반을 파악할 수 있습니다.
@@ -1354,7 +1366,7 @@ elif menu == "주거환경 분석":
                 "0.30p 상승했습니다. 다만 일부 기간의 자료입니다."
             )
     st.info("""
-    💡 핵심 인사이트
+    💡 핵심 내용
 
     아파트 매매가격지수의 변화는 부산의 주거시장 흐름을 파악하는
     중요한 지표입니다.
