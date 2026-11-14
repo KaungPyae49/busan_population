@@ -17,13 +17,13 @@ st.set_page_config(
 st.markdown("""
 <style>
     .main {
-        background-color: #F7F9FC;
+        background-color: dark;
     }
 
     .university-name {
         font-size: 25px;
         font-weight: 700;
-        color: #142B49;
+        color: dark;
     }
 
     .project-label {
@@ -32,16 +32,16 @@ st.markdown("""
     }
 
     .main-title {
-        font-size: 34px;
+        font-size: 40px;
         font-weight: 800;
-        color: #142B49;
+        color: dark;
         margin-top: 25px;
         text-align: center;
     }
 
     .sub-title {
         font-size: 17px;
-        color: #64748B;
+        color: white;
         margin-top: 5px;
         text-align: center;
     }
@@ -87,18 +87,18 @@ with col3:
             <div style="
                 font-size: 17px;
                 font-weight: 700;
-                color: #142B49;
+                color: dark;
             ">까웅뻬이손윈</div>
             <div style="
-                font-size: 13px;
-                color: #7A8795;
+                font-size: 17px;
+                color: dark;
                 margin-top: 5px;
             ">행정학과</div>
         </div>
          <div style="
-                font-size: 12px;
-                color: #9AA5B1;
-                margin-top: 4px;
+                font-size: 17px;
+                color: dark;
+                margin-top: 5px;
             ">학번: 202305224</div>
         </div>
         """,
@@ -115,18 +115,18 @@ with col4:
             <div style="
                 font-size: 17px;
                 font-weight: 700;
-                color: #142B49;
+                color: dark;
             ">까웅 셋 린</div>
             <div style="
-                font-size: 13px;
-                color: #7A8795;
+                font-size: 17px;
+                color: dark;
                 margin-top: 5px;
             ">미디어커뮤니케이션학과</div>
         </div>
         <div style="
-                font-size: 12px;
-                color: #9AA5B1;
-                margin-top: 4px;
+                font-size: 17px;
+                color: dark;
+                margin-top: 5px;
             ">학번: 202406268</div>
         </div>
         """,
