@@ -1279,27 +1279,34 @@ elif menu == "주거환경 분석":
                 "0.30p 상승했습니다. 다만 일부 기간의 자료입니다."
             )
 
-# ==========================================
+# =========
+
+# ==================================================
 # 데이터 출처 및 분석 방법
-# ==========================================
+# ==================================================
 
 st.markdown("---")
 
+# 페이지 제목
 st.markdown("""
-<div style="text-align:center; padding:25px 0 15px 0;">
+<div style="text-align:center; padding:25px 0 20px 0;">
     <div style="
         color:#64748B;
         font-size:13px;
         font-weight:700;
         letter-spacing:2px;
-    ">DATA SOURCE & METHODOLOGY</div>
+    ">
+        DATA SOURCE & METHODOLOGY
+    </div>
 
     <h2 style="
         color:#142B49;
         font-size:27px;
         font-weight:800;
         margin-top:10px;
-    ">데이터 출처 및 분석 방법</h2>
+    ">
+        데이터 출처 및 분석 방법
+    </h2>
 
     <p style="
         color:#64748B;
@@ -1311,48 +1318,76 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# 데이터 출처
+
+# --------------------------------------------------
+# 1. 데이터 출처
+# --------------------------------------------------
+
 st.markdown("""
 <div style="
     background:#F4F7FB;
     border:1px solid #E2E8F0;
     border-radius:14px;
     padding:24px;
-    margin:15px 0;
+    margin:15px 0 25px 0;
 ">
-    <div style="font-size:13px; color:#64748B; font-weight:700;">
+    <div style="
+        font-size:13px;
+        color:#64748B;
+        font-weight:700;
+        letter-spacing:1px;
+    ">
         DATA SOURCE
     </div>
-    <h3 style="color:#142B49; margin:8px 0;">
+
+    <h3 style="
+        color:#142B49;
+        margin:10px 0;
+        font-size:21px;
+    ">
         KOSIS 국가통계포털
     </h3>
-    <p style="color:#475569; font-size:14px; line-height:1.8;">
+
+    <p style="
+        color:#475569;
+        font-size:14px;
+        line-height:1.8;
+        margin-bottom:12px;
+    ">
         본 대시보드에 활용된 통계자료는
         KOSIS 국가통계포털에서 수집하였습니다.
         인구 이동, 전출 사유, 고용, 산업 및 주거환경 관련
-        통계자료를 활용하여 부산의 인구 유출 현상을 분석했습니다.
+        통계자료를 바탕으로 부산의 인구 유출 현상을 분석했습니다.
     </p>
+
     <a href="https://kosis.kr/" target="_blank"
        style="
-           display:inline-block;
-           margin-top:8px;
            color:#2563EB;
+           font-size:14px;
            font-weight:700;
            text-decoration:none;
        ">
-       KOSIS 국가통계포털 바로가기 →
+        KOSIS 국가통계포털 바로가기 →
     </a>
 </div>
 """, unsafe_allow_html=True)
 
-# 활용 데이터
+
+# --------------------------------------------------
+# 2. 주요 활용 데이터
+# --------------------------------------------------
+
 st.markdown("""
-<h4 style="color:#142B49; margin-top:30px; margin-bottom:15px;">
+<h4 style="
+    color:#142B49;
+    font-size:18px;
+    font-weight:700;
+    margin-top:30px;
+    margin-bottom:15px;
+">
     주요 활용 데이터
 </h4>
 """, unsafe_allow_html=True)
-
-data_col1, data_col2, data_col3, data_col4 = st.columns(4)
 
 data_items = [
     ("인구 이동", "전입·전출 및 순이동 현황"),
@@ -1361,42 +1396,54 @@ data_items = [
     ("주거환경", "아파트 매매가격지수"),
 ]
 
-for col, (title, description) in zip(
-    [data_col1, data_col2, data_col3, data_col4],
-    data_items
-):
+data_cols = st.columns(4)
+
+for col, (title, description) in zip(data_cols, data_items):
     with col:
         st.markdown(f"""
         <div style="
-            background:white;
+            background:#FFFFFF;
             border:1px solid #E2E8F0;
             border-radius:12px;
-            padding:18px 12px;
-            min-height:115px;
+            padding:20px 12px;
+            min-height:125px;
             text-align:center;
         ">
             <div style="
                 color:#142B49;
                 font-size:16px;
                 font-weight:700;
-                margin-bottom:9px;
-            ">{title}</div>
+                margin-bottom:10px;
+            ">
+                {title}
+            </div>
+
             <div style="
                 color:#64748B;
                 font-size:12px;
-                line-height:1.6;
-            ">{description}</div>
+                line-height:1.7;
+            ">
+                {description}
+            </div>
         </div>
         """, unsafe_allow_html=True)
 
-# 분석 과정
+
+# --------------------------------------------------
+# 3. 데이터 분석 과정
+# --------------------------------------------------
+
 st.markdown("""
-<h4 style="color:#142B49; margin-top:35px; margin-bottom:15px;">
+<h4 style="
+    color:#142B49;
+    font-size:18px;
+    font-weight:700;
+    margin-top:35px;
+    margin-bottom:15px;
+">
     데이터 분석 과정
 </h4>
 """, unsafe_allow_html=True)
-
-process_col1, process_col2, process_col3, process_col4 = st.columns(4)
 
 process_items = [
     ("01", "데이터 수집", "KOSIS 통계자료"),
@@ -1405,53 +1452,68 @@ process_items = [
     ("04", "대시보드 구현", "Streamlit"),
 ]
 
-for col, (number, title, tool) in zip(
-    [process_col1, process_col2, process_col3, process_col4],
-    process_items
-):
+process_cols = st.columns(4)
+
+for col, (number, title, tool) in zip(process_cols, process_items):
     with col:
         st.markdown(f"""
         <div style="
-            border-top:3px solid #315B8A;
             background:#F8FAFC;
+            border:1px solid #E2E8F0;
+            border-top:3px solid #315B8A;
+            border-radius:10px;
             padding:18px 14px;
-            border-radius:0 0 10px 10px;
-            min-height:110px;
+            min-height:120px;
         ">
             <div style="
                 color:#315B8A;
                 font-size:12px;
                 font-weight:800;
-            ">{number}</div>
+            ">
+                {number}
+            </div>
+
             <div style="
                 color:#142B49;
                 font-size:15px;
                 font-weight:700;
-                margin-top:8px;
-            ">{title}</div>
+                margin-top:9px;
+            ">
+                {title}
+            </div>
+
             <div style="
                 color:#64748B;
                 font-size:12px;
-                margin-top:6px;
-            ">{tool}</div>
+                margin-top:7px;
+            ">
+                {tool}
+            </div>
         </div>
         """, unsafe_allow_html=True)
 
-# 분석 유의사항
+
+# --------------------------------------------------
+# 4. 분석 시 유의사항
+# --------------------------------------------------
+
 st.markdown("""
 <div style="
     background:#F8FAFC;
     border-left:4px solid #94A3B8;
-    padding:16px 20px;
-    margin-top:25px;
-    border-radius:5px;
+    border-radius:6px;
+    padding:18px 20px;
+    margin-top:30px;
 ">
     <div style="
         color:#334155;
         font-size:14px;
         font-weight:700;
-        margin-bottom:7px;
-    ">분석 시 유의사항</div>
+        margin-bottom:8px;
+    ">
+        분석 시 유의사항
+    </div>
+
     <p style="
         color:#64748B;
         font-size:13px;
@@ -1459,40 +1521,51 @@ st.markdown("""
         margin:0;
     ">
         통계자료는 수집 시점과 제공 기관의 공표 일정에 따라
-        기준 기간이 다를 수 있습니다. 특히 2026년 자료는
-        일부 기간만 반영된 잠정 또는 부분 자료일 수 있으므로
-        해석에 유의해야 합니다.
+        기준 기간이 다를 수 있습니다.
+        특히 주거환경 분석 자료는 2021년 7월부터,
+        2026년 7월까지의 자료를 활용하였으므로
+        연도별 비교 시 분석 기간에 유의해야 합니다.
     </p>
 </div>
 """, unsafe_allow_html=True)
 
-# 마무리 메시지
+
+# --------------------------------------------------
+# 5. 마무리 메시지
+# --------------------------------------------------
+
 st.markdown("""
 <div style="
     text-align:center;
-    padding:45px 15px 25px 15px;
+    padding:50px 15px 30px 15px;
 ">
+    <div style="
+        color:#64748B;
+        font-size:12px;
+        font-weight:700;
+        letter-spacing:2px;
+        margin-bottom:15px;
+    ">
+        DATA-DRIVEN INSIGHT · BUSAN
+    </div>
+
     <h2 style="
         color:#142B49;
-        font-size:25px;
+        font-size:27px;
         font-weight:800;
+        line-height:1.5;
+        margin-bottom:15px;
     ">
         사람이 떠나는 도시에서,<br>
         사람이 머무는 도시로.
     </h2>
+
     <p style="
         color:#64748B;
         font-size:14px;
-        margin-top:15px;
+        line-height:1.8;
     ">
         부산의 미래는 인구 변화의 원인을 이해하는 것에서 시작됩니다.
-    </p>
-    <p style="
-        color:#94A3B8;
-        font-size:12px;
-        margin-top:30px;
-    ">
-        DATA-DRIVEN INSIGHT · BUSAN
     </p>
 </div>
 """, unsafe_allow_html=True)
