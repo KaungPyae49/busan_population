@@ -88,7 +88,7 @@ with col3:
                 font-size: 17px;
                 font-weight: 700;
                 color: dark;
-            ">까웅뻬이손윈</div>
+            ">까웅 삐에 손 윈</div>
             <div style="
                 font-size: 17px;
                 color: dark;
@@ -116,7 +116,7 @@ with col4:
                 font-size: 17px;
                 font-weight: 700;
                 color: dark;
-            ">까웅 셋 린</div>
+            ">까웅 세잇 린</div>
             <div style="
                 font-size: 17px;
                 color: dark;
@@ -140,7 +140,7 @@ st.markdown(
 )
 
 st.markdown(
-    '<div class="main-title">부산에서 사람들은 왜 떠나는가?</div>',
+    '<div class="main-title">부산에서 왜 떠나는가?</div>',
     unsafe_allow_html=True
 )
 
